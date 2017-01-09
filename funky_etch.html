@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Funky Etch a Sketch</title>
+<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type='text/javascript' src='script.js'></script>
+</head>
+
+<body>
+
+
+	<button id="buttonIn" onclick="remove()">Make a New Grid</button>
+
+
+<div class="container">
+</div>
+
+<script>
+
+function remove(){
+
+	$(".container div").remove();
+	var rowSize = prompt("How many squares per side?");
+for (var i = 0; i < Math.pow(rowSize, 2); i++) {
+	$(".container").append("<div></div>");
+};
+
+$(".container div").height(500/rowSize);
+$(".container div").width(500/rowSize);
+$(".container div").css({"background-color": "black"});
+
+$(".container div").mouseenter(function(){
+    $(this).css("background-color", "white");
+
+});
+
+}
+
+
+
+
+</script>
+
+
+
+
+	
+</body>
+
+</html>
